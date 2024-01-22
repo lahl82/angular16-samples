@@ -1,0 +1,17 @@
+<div class="component-border-red" id="hijo">
+  <h1>Hijo</h1>
+  <div>
+    <h2>Chat</h2>
+    <p><< Soy tu Hijo!</p>
+    <p>Mensaje recibido desde Padre: <b>{{ recibeDesdeHijo }}</b></p>
+    <label for="entrada">Mensaje a enviar: </label>
+    <input type="text" id="entrada" [(ngModel)]="mensaje">
+    <button (click)="enviarMensaje()">Enviar</button>
+  </div>
+  <div>
+    <h2>Contador</h2>
+    <button (click)="incrementar()">Incrementar</button>
+    <button (click)="decrementar()">Decrementar</button>
+  </div>
+</div>
+

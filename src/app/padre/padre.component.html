@@ -1,0 +1,30 @@
+<div class="component-border-blue" appBrotherStyle>
+  <h1>Padre</h1>
+  <h2>Fecha US de hoy {{ fecha | date: 'short' }}</h2>
+  <h2>Fecha VET de hoy {{ fecha | date: 'd/M/yyyy, h:mm a' }}</h2>
+  <h2>Cotizacion de Dolar {{ valorDolar | currency: 'VES' }}</h2>
+  <h2>El numero Pi {{ valorPi * 10 | number: '1.2-2' }}</h2>
+  <h2>El porcentaje es  {{ factor | percent }}</h2>
+
+  <div>
+    <h2>Chat</h2>
+    <p>>> Soy tu {{ 'Padre!' | toUppercasePipe }}</p>
+    <p> Mensaje recibido desde Hijo: <b>{{ mensajeDesdeHijo }}</b></p>
+  </div>
+  <div>
+    <h2>Contador</h2>
+    <p> {{ valorContador }} </p>
+  </div>
+  <app-hijo
+    [recibeDesdeHijo] = "mensajeDesdePadre"
+    (enviaDesdeHijo)="manejadorEventoPadre($event)"
+    (incrementarContador)="incrementar()"
+    (decrementarContador)="decrementar()"
+     />
+  <div>
+    <h2>Conversacion</h2>
+    <div>
+      <button class="btn btn-primary" (click)="saludar()">Saludar</button>
+    </div>
+  </div>
+</div>
